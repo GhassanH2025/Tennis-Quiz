@@ -7,27 +7,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <style>
-        body { 
-            font-family: 'Roboto', sans-serif; 
-            max-width: 800px; 
-            margin: 0 auto; 
-            padding: 20px; 
-            text-align: center; 
-            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%); 
-            color: #333; 
+        body {
+            font-family: 'Roboto', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+            color: #333;
             line-height: 1.6;
         }
-        h1 { 
-            color: #2c5aa0; 
-            font-weight: 700; 
+        h1 {
+            color: #2c5aa0;
+            font-weight: 700;
             margin-bottom: 10px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
-        h2 { 
-            color: #555; 
-            text-align: left; 
-            font-weight: 400; 
-            border-bottom: 2px solid #e0e0e0; 
+        h2 {
+            color: #555;
+            text-align: left;
+            font-weight: 400;
+            border-bottom: 2px solid #e0e0e0;
             padding-bottom: 10px;
         }
         h3 {
@@ -40,99 +40,101 @@
             text-align: left;
             font-weight: 600;
         }
-        .page { 
-            display: none; 
-            margin: 20px 0; 
-            background: white; 
-            padding: 30px; 
-            border-radius: 12px; 
+        .page {
+            display: none;
+            margin: 20px 0;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        .page.active { 
-            display: block; 
+        .page.active {
+            display: block;
         }
-        #explanation .page { background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%); }
+        #explanation .page {
+            background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+        }
         #page1 { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); } /* Red tones for Aggression */
         #page2 { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); } /* Blue tones for Court Position */
         #page3 { background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); } /* Purple tones for Tempo */
         #page4 { background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%); } /* Green tones for Foundation */
-        #quiz-results { 
-            margin-top: 30px; 
-            padding: 30px; 
-            background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%); 
-            border-radius: 12px; 
-            display: none; 
+        #quiz-results {
+            margin-top: 30px;
+            padding: 30px;
+            background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%);
+            border-radius: 12px;
+            display: none;
             text-align: left;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        .question { 
-            margin: 20px 0; 
-            text-align: left; 
-            background: rgba(255,255,255,0.8); 
-            padding: 15px; 
-            border-radius: 8px; 
+        .question {
+            margin: 20px 0;
+            text-align: left;
+            background: rgba(255,255,255,0.8);
+            padding: 15px;
+            border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
-        .question label { 
-            display: block; 
-            font-weight: 400; 
+        .question label {
+            display: block;
+            font-weight: 400;
             margin-bottom: 10px;
             color: #444;
         }
-        .question input[type="range"] { 
-            width: 100%; 
+        .question input[type="range"] {
+            width: 100%;
             margin: 10px 0;
             accent-color: #2c5aa0;
         }
-        .question .labels { 
-            display: flex; 
-            justify-content: space-between; 
-            font-size: 0.8em; 
+        .question .labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8em;
             color: #666;
         }
-        .ad { 
-            background: #e0e0e0; 
-            padding: 15px; 
-            margin: 20px 0; 
-            border: 1px solid #ccc; 
+        .ad {
+            background: #e0e0e0;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
             border-radius: 8px;
             color: #666;
         }
-        button { 
-            padding: 12px 24px; 
-            background: #2c5aa0; 
-            color: white; 
-            border: none; 
-            cursor: pointer; 
-            border-radius: 6px; 
+        button {
+            padding: 12px 24px;
+            background: #2c5aa0;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
             transition: all 0.3s ease;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        button:hover { 
-            background: #1e4d8c; 
+        button:hover {
+            background: #1e4d8c;
             transform: translateY(-1px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
-        .explanation { 
-            text-align: left; 
-            background: white; 
-            padding: 40px; 
-            border-radius: 12px; 
+        .explanation {
+            text-align: left;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             margin: 20px 0;
         }
-        .explanation p, .explanation ul { 
-            font-size: 1.1em; 
+        .explanation p, .explanation ul {
+            font-size: 1.1em;
             margin-bottom: 20px;
         }
-        .explanation ul { 
-            list-style-type: none; 
+        .explanation ul {
+            list-style-type: none;
             padding-left: 0;
         }
-        .explanation li { 
-            margin-bottom: 15px; 
+        .explanation li {
+            margin-bottom: 15px;
             padding-left: 20px;
             position: relative;
         }
@@ -143,9 +145,9 @@
             color: #2c5aa0;
             font-weight: bold;
         }
-        #type-result { 
-            color: #2c5aa0; 
-            font-size: 2em; 
+        #type-result {
+            color: #2c5aa0;
+            font-size: 2em;
             font-weight: 700;
         }
         .part1, .part2 {
@@ -154,6 +156,13 @@
         ul.key-traits {
             list-style-type: disc;
             padding-left: 20px;
+        }
+        #player-examples {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid #2c5aa0;
         }
     </style>
 </head>
@@ -164,17 +173,10 @@
     <div id="explanation" class="page active">
         <div class="explanation">
             <h2>What is your true playing style? Take the test to find your 4-letter type and see which pros you play like.</h2>
-            
             <h2>Introduction</h2>
             <p>Welcome to the Tennis Typing Test, a framework designed to analyze and categorize the countless styles of play in tennis. Much like personality tests, this quiz places your game on four independent axes. Your results will give you a unique 4-letter acronym that captures your strategic approach, court positioning, point tempo, and technical foundation.</p>
-            
             <p>This isn't about finding a "best" style—it's about understanding your own. Whether you're an aggressive baseliner, a crafty constructor, or a flawless all-courter, your type has its own strengths and legendary players to learn from.</p>
-
-            <div class="ad">
-                Ad Space: Banner or Video Ad Here
-                <!-- Replace with Google AdSense code -->
-            </div>
-
+            <div class="ad"> Ad Space: Banner or Video Ad Here <!-- Replace with Google AdSense code --> </div>
             <button onclick="startQuiz()">Start the Quiz</button>
         </div>
     </div>
@@ -217,7 +219,7 @@
             <div class="labels"><span>1 (Disagree)</span><span>10 (Agree)</span></div>
         </div>
         <div class="question">
-            <label>7. I feel confident finishing points with overhead smashes or drop volleys.</label>
+            <label>7. I use serve-and-volley tactics frequently.</label>
             <input type="range" id="q2_2" min="1" max="10" value="5">
             <div class="labels"><span>1 (Disagree)</span><span>10 (Agree)</span></div>
         </div>
@@ -227,7 +229,7 @@
             <div class="labels"><span>1 (Disagree)</span><span>10 (Agree)</span></div>
         </div>
         <div class="question">
-            <label>9. I use serve-and-volley tactics frequently.</label>
+            <label>9. I use chip-and-charge or return-and-volley tactics frequently.</label>
             <input type="range" id="q2_4" min="1" max="10" value="5">
             <div class="labels"><span>1 (Disagree)</span><span>10 (Agree)</span></div>
         </div>
@@ -274,12 +276,12 @@
     <div id="page4" class="page">
         <h2>Axis 4: Foundation</h2>
         <div class="question">
-            <label>16. My speed/athleticism is a bigger strength than my stroke technique.</label>
+            <label>16. My physical attributes (strength, agility, flexibility, speed, height, stamina...) are a bigger asset than my stroke technique.</label>
             <input type="range" id="q4_1" min="1" max="10" value="5">
             <div class="labels"><span>1 (Disagree)</span><span>10 (Agree)</span></div>
         </div>
         <div class="question">
-            <label>17. I win points through precise placement rather than power.</label>
+            <label>17. I win points through precise placement and/or heavy top spin rather than power.</label>
             <input type="range" id="q4_2" min="1" max="10" value="5">
             <div class="labels"><span>1 (Disagree)</span><span>10 (Agree)</span></div>
         </div>
@@ -289,12 +291,12 @@
             <div class="labels"><span>1 (Disagree)</span><span>10 (Agree)</span></div>
         </div>
         <div class="question">
-            <label>19. Touch shots (drops, angles, slices) are central to my strategy.</label>
+            <label>19. Touch shots (drops, counters, slices, volleys...) are central to my game.</label>
             <input type="range" id="q4_4" min="1" max="10" value="5">
             <div class="labels"><span>1 (Disagree)</span><span>10 (Agree)</span></div>
         </div>
         <div class="question">
-            <label>20. I rely on endurance to outlast opponents in grueling matches.</label>
+            <label>20. I like to counter my opponent's fast balls and use their pace against them instead of generating pace myself.</label>
             <input type="range" id="q4_5" min="1" max="10" value="5">
             <div class="labels"><span>1 (Disagree)</span><span>10 (Agree)</span></div>
         </div>
@@ -342,14 +344,14 @@
                     parseInt(document.getElementById('q3_2').value),
                     11 - parseInt(document.getElementById('q3_3').value), // Reverse
                     parseInt(document.getElementById('q3_4').value),
-                    11 - parseInt(document.getElementById('q3_5').value)  // Reverse
+                    11 - parseInt(document.getElementById('q3_5').value) // Reverse
                 ],
                 axis4: [
                     parseInt(document.getElementById('q4_1').value),
                     11 - parseInt(document.getElementById('q4_2').value), // Reverse
                     parseInt(document.getElementById('q4_3').value),
                     11 - parseInt(document.getElementById('q4_4').value), // Reverse
-                    parseInt(document.getElementById('q4_5').value)
+                    11 - parseInt(document.getElementById('q4_5').value)  // Reverse (New logic for Q20)
                 ]
             };
 
@@ -368,209 +370,181 @@
 
             const type = axis1 + axis2 + axis3 + axis4;
             document.getElementById('type-result').textContent = type;
+            
+            // --- NEW LOGIC FOR PLAYER EXAMPLES ---
+
+            // Determine "leaning" for balanced (B) types for player examples
+            // If the score is between 4 and 7, it's 'B', but we check if it's closer to one end.
+            let leanAxis3 = axis3;
+            if (axis3 === 'B') {
+                leanAxis3 = (avg3 > 5.5) ? 'E' : 'C';
+            }
+
+            let leanAxis4 = axis4;
+            if (axis4 === 'B') {
+                leanAxis4 = (avg4 > 5.5) ? 'P' : 'T';
+            }
+
+            let playerExamplesHTML = '<div id="player-examples"><p><strong>You probably have a similar game to one or more of these players:</strong><br>';
+            let playersFound = false;
+
+            // 1. Aggressive Baseliners (First letter A or B, Second letter B)
+            if ((axis1 === 'A' || axis1 === 'B') && axis2 === 'B') {
+                if (leanAxis3 === 'E' && leanAxis4 === 'P') {
+                    playerExamplesHTML += 'Jannik Sinner, Carlos Alcaraz, Stanislas Wawrinka, Taylor Fritz, Andre Agassi, Ivan Lendl, Serena Williams, Iga Swiatek, Aryna Sabalenka, Monica Seles.';
+                    playersFound = true;
+                } else if (leanAxis3 === 'E' && leanAxis4 === 'T') {
+                    playerExamplesHTML += 'Carlos Alcaraz, Bjorn Borg, Iga Swiatek, Maria Sharapova, Steffi Graf.';
+                    playersFound = true;
+                } else if (leanAxis3 === 'C' && leanAxis4 === 'P') {
+                    playerExamplesHTML += 'Rafael Nadal, Novak Djokovic, Dominic Thiem, Simona Halep, Jasmine Paolini.';
+                    playersFound = true;
+                } else if (leanAxis3 === 'C' && leanAxis4 === 'T') {
+                    playerExamplesHTML += 'Novak Djokovic, Rafael Nadal, Daniil Medvedev, Mats Wilander, Ons Jabeur.';
+                    playersFound = true;
+                }
+            }
+            // 2. Defensive Baseliners (D, B, C-leaning)
+            else if (axis1 === 'D' && axis2 === 'B' && leanAxis3 === 'C') {
+                 if (leanAxis4 === 'P') {
+                    playerExamplesHTML += 'Gael Monfils, Michael Chang, David Ferrer, Caroline Wozniacki, Arantxa Sanchez Vicario, Angelique Kerber.';
+                    playersFound = true;
+                 } else if (leanAxis4 === 'T') {
+                    playerExamplesHTML += 'Andy Murray, Adrian Mannarino, Lleyton Hewitt, Fabrice Santoro, Agnieszka Radwanska, Chris Evert.';
+                    playersFound = true;
+                 }
+            }
+            // 3. Serve and Volleyers (A, N, E)
+            else if (axis1 === 'A' && axis2 === 'N' && axis3 === 'E') {
+                if (leanAxis4 === 'P') {
+                    playerExamplesHTML += 'Pete Sampras, Boris Becker, Ivo Karlovic, Goran Ivanisevic, Margaret Court, Martina Navratilova.';
+                    playersFound = true;
+                } else if (leanAxis4 === 'T') {
+                    playerExamplesHTML += 'Stefan Edberg, John McEnroe, Patrick Rafter, Jana Novotna.';
+                    playersFound = true;
+                }
+            }
+            // 4. All-courters (A or B, then A)
+            else if ((axis1 === 'A' || axis1 === 'B') && axis2 === 'A') {
+                if (leanAxis4 === 'P') {
+                    playerExamplesHTML += 'Stefanos Tsitsipas, Venus Williams, Billie Jean King.';
+                    playersFound = true;
+                } else if (leanAxis4 === 'T') {
+                    playerExamplesHTML += 'Roger Federer, Grigor Dimitrov, Feliciano Lopez, Ashleigh Barty, Justine Henin, Martina Hingis.';
+                    playersFound = true;
+                }
+            }
+
+            if (!playersFound) {
+                playerExamplesHTML = '<div id="player-examples"><p>Your unique playstyle is a rare combination, putting you in a class of your own!</p>';
+            }
+            playerExamplesHTML += '</p></div>';
+
+            // --- END OF NEW LOGIC ---
 
             // Part 1: Strategic Category
-            let part1 = '<h3>Part 1: Your Strategic Category</h3>';
+            let part1 = '<div class="part1"><h3>Part 1: Your Strategic Category</h3>';
             if ((axis1 === 'A' || axis1 === 'B') && axis2 === 'B') {
                 part1 += `
-                    <h4>1. The Aggressive Baseliner (AB__ or BB__)</h4>
+                    <h4>1. The Aggressive Baseliner</h4>
                     <p>You rule the game from the back of the court. Your primary goal is to dictate rallies with powerful or well directed, penetrating groundstrokes, aiming to hit winners or force weak replies. You are the engine of the match, controlling the tempo and geometry of the point from your baseline fortress.</p>
                     <p><strong>Key Traits:</strong> Powerful/well directed groundstrokes, aggressive returning, controlling the center of the court, aiming for the angles</p>
                     <p><strong>Notable Examples:</strong> Novak Djokovic, Rafael Nadal, Carlos Alcaraz, Jannik Sinner, Ivan Lendl, Andre Agassi, Bjorn Borg, Jimmy Connors, Iga Świątek, Maria Sharapova, Serena Williams, Aryna Sabalenka, Steffi Graf, Monica Seles.</p>
                 `;
             } else if (axis1 === 'D' && axis2 === 'B') {
                 part1 += `
-                    <h4>2. The Defensive Baseliner (DB__)</h4>
+                    <h4>2. The Defensive Baseliner</h4>
                     <p>You are the ultimate wall. Your strength is your resilience, consistency, and ability to extend rallies. You win by absorbing your opponent's power, neutralizing their attacks, and forcing them to hit one more ball, often leading to their error. You are a master of turning defense into offense.</p>
                     <p><strong>Key Traits:</strong> Incredible consistency, speed, stamina, intelligent shot selection, counter-punching.</p>
                     <p><strong>Notable Examples:</strong> Andy Murray, David Ferrer, Gilles Simon, Lleyton Hewitt, Michael Chang, Caroline Wozniacki, Angelique Kerber, Chris Evert.</p>
                 `;
             } else if (axis1 === 'A' && axis2 === 'N' && axis3 === 'E') {
                 part1 += `
-                    <h4>3. The Serve & Volleyer (ANE_)</h4>
+                    <h4>3. The Serve & Volleyer</h4>
                     <p>You are a throwback to a classic era. Your strategy is based on immediate pressure: a powerful or well-placed serve or an aggressive return followed by a rapid advance to the net to cut off the angle and finish the point with a volley or overhead. You thrive on short points and giving your opponent no time to react.</p>
                     <p><strong>Key Traits:</strong> Big serving, confident volleying, quick reflexes, tactical courage.</p>
                     <p><strong>Pro Examples:</strong> Pete Sampras, John McEnroe, Stefan Edberg, Boris Becker, Martina Navratilova, Margaret Court.</p>
                 `;
             } else if ((axis1 === 'A' || axis1 === 'B') && axis2 === 'A') {
                 part1 += `
-                    <h4>4. The All-Court Player (AA_ or BA_)</h4>
+                    <h4>4. The All-Court Player</h4>
                     <p>You are the most complete and versatile type when we talk about court positioning. You feel equally at home at the baseline, the net, and everywhere in between. You seamlessly excel hitting groundstrokes and volleys, and maybe have every shot in the book. Your game is built on adaptability and supreme court sense.</p>
                     <p><strong>Key Traits:</strong> Shot variety, excellent movement and footwork, adaptability, strong both in baseline rallies and net exchanges.</p>
                     <p><strong>Pro Examples:</strong> Roger Federer, Stefanos Tsitsipas, Grigor Dimitrov, Ashleigh Barty, Martina Hingis, Justine Henin, Billie Jean King.</p>
                 `;
-            } else {
-                // Default for unmatched combinations
-                part1 += `
-                    <p>Based on your results, your style is a unique combination not perfectly matching the classic categories. Explore the breakdown below for insights!</p>
-                `;
+            } else { // Default for unmatched combinations
+                part1 += `<p>Based on your results, your style is a unique combination not perfectly matching the classic categories. Explore the breakdown below for insights!</p>`;
             }
+            part1 += '</div>';
 
             // Part 2: Breaking Down Your 4-Letter Code
             let part2 = '<div class="part2"><h3>Part 2: Breaking Down Your 4-Letter Code</h3><p>Now, let\'s see what each specific letter in your code reveals about your style.</p>';
-            
             part2 += '<h4>First Letter: Aggression (' + axis1 + ')</h4>';
             if (axis1 === 'A') {
-                part2 += '<p>A (Attacking): You are the aggressor. You look to take time away and end points. Examples: Carlos Alcaraz, Jannik Sinner, Roger Federer, Pete Sampras, Iga Swiatek, Aryna Sabalenka, Serena Williams, Martina Navratilova.</p>';
+                part2 += '<p><strong>A (Attacking):</strong> You are the aggressor. You look to take time away and end points. Examples: Carlos Alcaraz, Jannik Sinner, Roger Federer, Pete Sampras, Iga Swiatek, Aryna Sabalenka, Serena Williams, Martina Navratilova.</p>';
             } else if (axis1 === 'D') {
-                part2 += '<p>D (Defending): You are the counter-puncher. You extend rallies and win by forcing errors. Examples: Andy Murray, David Ferrer, Lleyton Hewitt, Michael Chang, Caroline Wozniacki, Angelique Kerber, Chris Evert.</p>';
+                part2 += '<p><strong>D (Defending):</strong> You are the counter-puncher. You extend rallies and win by forcing errors. Examples: Andy Murray, David Ferrer, Lleyton Hewitt, Michael Chang, Caroline Wozniacki, Angelique Kerber, Chris Evert.</p>';
             } else {
-                part2 += '<p>B (Balanced): You seamlessly switch between offense and defense. Examples: Rafael Nadal, Novak Djokovic (leans attacking), Daniil Medvedev, Mats Wilander, Simona Halep, Coco Gauff, Ons Jabeur.</p>';
+                part2 += '<p><strong>B (Balanced):</strong> You seamlessly switch between offense and defense. Examples: Rafael Nadal, Novak Djokovic (leans attacking), Daniil Medvedev, Mats Wilander, Simona Halep, Coco Gauff, Ons Jabeur.</p>';
             }
-
             part2 += '<h4>Second Letter: Court Position (' + axis2 + ')</h4>';
             if (axis2 === 'B') {
-                part2 += '<p>B (Baseliner): You are most effective and confident from the back of the court. Examples: Novak Djokovic, Rafael Nadal, Ivan Lendl, Bjorn Borg, Andre Agassi, Serena Williams, Iga Swiatek, Maria Sharapova, Chris Evert.</p>';
+                part2 += '<p><strong>B (Baseliner):</strong> You are most effective and confident from the back of the court. Examples: Novak Djokovic, Rafael Nadal, Ivan Lendl, Bjorn Borg, Andre Agassi, Serena Williams, Iga Swiatek, Maria Sharapova, Chris Evert.</p>';
             } else if (axis2 === 'N') {
-                part2 += '<p>N (Net): You prefer to finish points at the net. Examples: Pete Sampras, John McEnroe, Stefan Edberg, Boris Becker, Martina Navratilova, Margaret Court.</p>';
+                part2 += '<p><strong>N (Net):</strong> You prefer to finish points at the net. Examples: Pete Sampras, John McEnroe, Stefan Edberg, Boris Becker, Martina Navratilova, Margaret Court.</p>';
             } else {
-                part2 += '<p>A (All-Court): You are versatile and effective from anywhere. Examples: Roger Federer, Stefanos Tsitsipas, Grigor Dimitrov, Martina Hingis, Justine Henin, Ashleigh Barty, Billie Jean King.</p>';
+                part2 += '<p><strong>A (All-Court):</strong> You are versatile and effective from anywhere. Examples: Roger Federer, Stefanos Tsitsipas, Grigor Dimitrov, Martina Hingis, Justine Henin, Ashleigh Barty, Billie Jean King.</p>';
             }
-
             part2 += '<h4>Third Letter: Tempo (' + axis3 + ')</h4>';
             if (axis3 === 'E') {
-                part2 += '<p>E (Explosive): Your game is built on power, high pace and immediacy. You look to end points fast. Examples: Carlos Alcaraz, Jannik Sinner, Ben Shelton, Boris Becker, Serena Williams, Aryna Sabalenka, Naomi Osaka, Martina Navratilova.</p>';
+                part2 += '<p><strong>E (Explosive):</strong> Your game is built on power, high pace and immediacy. You look to end points fast. Examples: Carlos Alcaraz, Jannik Sinner, Ben Shelton, Boris Becker, Serena Williams, Aryna Sabalenka, Naomi Osaka, Martina Navratilova.</p>';
             } else if (axis3 === 'C') {
-                part2 += '<p>C (Constructor): You are a strategic player who builds points with patience and patterns. Examples: Rafael Nadal (mostly), Novak Djokovic, Daniil Medvedev, Andy Murray, Mats Wilander, Caroline Wozniacki, Ons Jabeur, Jasmine Paolini, Simona Halep, Chris Evert, Justine Henin, Martina Hingis.</p>';
+                part2 += '<p><strong>C (Constructor):</strong> You are a strategic player who builds points with patience and patterns. Examples: Rafael Nadal (mostly), Novak Djokovic, Daniil Medvedev, Andy Murray, Mats Wilander, Caroline Wozniacki, Ons Jabeur, Jasmine Paolini, Simona Halep, Chris Evert, Justine Henin, Martina Hingis.</p>';
             } else {
-                part2 += '<p>B (Balanced): A potent mix of tactical play and explosivity. Examples: Gael Monfils (leans constructor), Rafael Nadal (leans constructor), Steffi Graf.</p>';
+                part2 += '<p><strong>B (Balanced):</strong> A potent mix of tactical play and explosivity. Examples: Gael Monfils (leans constructor), Rafael Nadal (leans constructor), Steffi Graf.</p>';
             }
-
             part2 += '<h4>Fourth Letter: Foundation (' + axis4 + ')</h4>';
             if (axis4 === 'P') {
-                part2 += '<p>P (Physique): Your greatest strengths are your athletic attributes (power, speed, endurance, agility...). Examples: Stanislas Wawrinka, Stefanos Tsitsipas, Juan Martín del Potro, Gaël Monfils, Dominic Thiem, Serena Williams, Aryna Sabalenka, Elena Rybakina, Naomi Osaka, Martina Navratilova.</p>';
+                part2 += '<p><strong>P (Physique):</strong> Your greatest strengths are your athletic attributes (power, speed, endurance, agility...). Examples: Stanislas Wawrinka, Stefanos Tsitsipas, Juan Martín del Potro, Gaël Monfils, Dominic Thiem, Serena Williams, Aryna Sabalenka, Elena Rybakina, Naomi Osaka, Martina Navratilova.</p>';
             } else if (axis4 === 'T') {
-                part2 += '<p>T (Technique): Your greatest strengths are your stroke mechanics, touch, and variety. Examples: Roger Federer, Feliciano Lopez, Fabrice Santoro, Marcelo Rios, Adrian Mannarino, Justine Henin, Martina Hingis, Ons Jabeur, Agnieszka Radwańska, Hsieh Su-Wei.</p>';
+                part2 += '<p><strong>T (Technique):</strong> Your greatest strengths are your stroke mechanics, touch, and variety. Examples: Roger Federer, Feliciano Lopez, Fabrice Santoro, Marcelo Rios, Adrian Mannarino, Justine Henin, Martina Hingis, Ons Jabeur, Agnieszka Radwańska, Hsieh Su-Wei.</p>';
             } else {
-                part2 += '<p>B (Balanced): A rare and complete blend of elite athleticism and technical skill. Examples: Carlos Alcaraz, Rafael Nadal, Björn Borg, Ashleigh Barty, Venus Williams, Steffi Graf, Billie Jean King.</p>';
+                part2 += '<p><strong>B (Balanced):</strong> A rare and complete blend of elite athleticism and technical skill. Examples: Carlos Alcaraz, Rafael Nadal, Björn Borg, Ashleigh Barty, Venus Williams, Steffi Graf, Billie Jean King.</p>';
             }
-
             part2 += '</div>';
 
-            document.getElementById('description').innerHTML = part1 + part2;
+            document.getElementById('description').innerHTML = playerExamplesHTML + part1 + part2;
             document.getElementById('page4').classList.remove('active');
             document.getElementById('quiz-results').style.display = 'block';
+            window.scrollTo(0, 0); // Scroll to top to show results
         }
 
         function downloadResults() {
-            // Create a temporary div for the simplified results
-            const tempDiv = document.createElement('div');
-            tempDiv.style.width = '600px';
-            tempDiv.style.padding = '20px';
-            tempDiv.style.background = 'linear-gradient(135deg, #fffde7 0%, #fff9c4 100%)';
-            tempDiv.style.borderRadius = '12px';
-            tempDiv.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
-            tempDiv.style.fontFamily = '"Roboto", sans-serif';
-            tempDiv.style.color = '#333';
-            tempDiv.style.lineHeight = '1.6';
-            tempDiv.style.textAlign = 'left';
-
-            // Get the type result
-            const type = document.getElementById('type-result').textContent;
-
-            // Simplified Part 1: Strategic Category (remove Key Traits)
-            let part1 = '<h3 style="color: #2c5aa0; font-weight: 700;">Part 1: Your Strategic Category</h3>';
-            const axis1 = type[0];
-            const axis2 = type[1];
-            const axis3 = type[2];
-            const axis4 = type[3];
-
-            if ((axis1 === 'A' || axis1 === 'B') && axis2 === 'B') {
-                part1 += `
-                    <h4 style="color: #444; font-weight: 600;">1. The Aggressive Baseliner (AB__ or BB__)</h4>
-                    <p>You rule the game from the back of the court. Your primary goal is to dictate rallies with powerful or well directed, penetrating groundstrokes, aiming to hit winners or force weak replies. You are the engine of the match, controlling the tempo and geometry of the point from your baseline fortress.</p>
-                    <p><strong>Notable Examples:</strong> Novak Djokovic, Rafael Nadal, Carlos Alcaraz, Jannik Sinner, Ivan Lendl, Andre Agassi, Bjorn Borg, Jimmy Connors, Iga Świątek, Maria Sharapova, Serena Williams, Aryna Sabalenka, Steffi Graf, Monica Seles.</p>
-                `;
-            } else if (axis1 === 'D' && axis2 === 'B') {
-                part1 += `
-                    <h4 style="color: #444; font-weight: 600;">2. The Defensive Baseliner (DB__)</h4>
-                    <p>You are the ultimate wall. Your strength is your resilience, consistency, and ability to extend rallies. You win by absorbing your opponent's power, neutralizing their attacks, and forcing them to hit one more ball, often leading to their error. You are a master of turning defense into offense.</p>
-                    <p><strong>Notable Examples:</strong> Andy Murray, David Ferrer, Gilles Simon, Lleyton Hewitt, Michael Chang, Caroline Wozniacki, Angelique Kerber, Chris Evert.</p>
-                `;
-            } else if (axis1 === 'A' && axis2 === 'N' && axis3 === 'E') {
-                part1 += `
-                    <h4 style="color: #444; font-weight: 600;">3. The Serve & Volleyer (ANE_)</h4>
-                    <p>You are a throwback to a classic era. Your strategy is based on immediate pressure: a powerful or well-placed serve or an aggressive return followed by a rapid advance to the net to cut off the angle and finish the point with a volley or overhead. You thrive on short points and giving your opponent no time to react.</p>
-                    <p><strong>Pro Examples:</strong> Pete Sampras, John McEnroe, Stefan Edberg, Boris Becker, Martina Navratilova, Margaret Court.</p>
-                `;
-            } else if ((axis1 === 'A' || axis1 === 'B') && axis2 === 'A') {
-                part1 += `
-                    <h4 style="color: #444; font-weight: 600;">4. The All-Court Player (AA_ or BA_)</h4>
-                    <p>You are the most complete and versatile type when we talk about court positioning. You feel equally at home at the baseline, the net, and everywhere in between. You seamlessly excel hitting groundstrokes and volleys, and maybe have every shot in the book. Your game is built on adaptability and supreme court sense.</p>
-                    <p><strong>Pro Examples:</strong> Roger Federer, Stefanos Tsitsipas, Grigor Dimitrov, Ashleigh Barty, Martina Hingis, Justine Henin, Billie Jean King.</p>
-                `;
-            } else {
-                part1 += `
-                    <p>Based on your results, your style is a unique combination not perfectly matching the classic categories. Explore the breakdown below for insights!</p>
-                `;
-            }
-
-            // Simplified Part 2: Breaking Down Your 4-Letter Code (remove examples)
-            let part2 = '<div style="margin-bottom: 30px;"><h3 style="color: #2c5aa0; font-weight: 700;">Part 2: Breaking Down Your 4-Letter Code</h3><p>Now, let\'s see what each specific letter in your code reveals about your style.</p>';
+            // This function is complex and relies on the exact structure of the results.
+            // For simplicity, we'll capture the entire results div.
+            const resultsDiv = document.getElementById('quiz-results');
             
-            part2 += '<h4 style="color: #444; font-weight: 600;">First Letter: Aggression (' + axis1 + ')</h4>';
-            if (axis1 === 'A') {
-                part2 += '<p>A (Attacking): You are the aggressor. You look to take time away and end points.</p>';
-            } else if (axis1 === 'D') {
-                part2 += '<p>D (Defending): You are the counter-puncher. You extend rallies and win by forcing errors.</p>';
-            } else {
-                part2 += '<p>B (Balanced): You seamlessly switch between offense and defense.</p>';
-            }
+            // Temporarily hide the download button and ad from the capture
+            const downloadButton = resultsDiv.querySelector('button');
+            const adDiv = resultsDiv.querySelector('.ad');
+            downloadButton.style.display = 'none';
+            adDiv.style.display = 'none';
 
-            part2 += '<h4 style="color: #444; font-weight: 600;">Second Letter: Court Position (' + axis2 + ')</h4>';
-            if (axis2 === 'B') {
-                part2 += '<p>B (Baseliner): You are most effective and confident from the back of the court.</p>';
-            } else if (axis2 === 'N') {
-                part2 += '<p>N (Net): You prefer to finish points at the net.</p>';
-            } else {
-                part2 += '<p>A (All-Court): You are versatile and effective from anywhere.</p>';
-            }
-
-            part2 += '<h4 style="color: #444; font-weight: 600;">Third Letter: Tempo (' + axis3 + ')</h4>';
-            if (axis3 === 'E') {
-                part2 += '<p>E (Explosive): Your game is built on power, high pace and immediacy. You look to end points fast.</p>';
-            } else if (axis3 === 'C') {
-                part2 += '<p>C (Constructor): You are a strategic player who builds points with patience and patterns.</p>';
-            } else {
-                part2 += '<p>B (Balanced): A potent mix of tactical play and explosivity.</p>';
-            }
-
-            part2 += '<h4 style="color: #444; font-weight: 600;">Fourth Letter: Foundation (' + axis4 + ')</h4>';
-            if (axis4 === 'P') {
-                part2 += '<p>P (Physique): Your greatest strengths are your athletic attributes (power, speed, endurance, agility...).</p>';
-            } else if (axis4 === 'T') {
-                part2 += '<p>T (Technique): Your greatest strengths are your stroke mechanics, touch, and variety.</p>';
-            } else {
-                part2 += '<p>B (Balanced): A rare and complete blend of elite athleticism and technical skill.</p>';
-            }
-
-            part2 += '</div>';
-
-            // Combine content for the download
-            tempDiv.innerHTML = `
-                <h2 style="color: #2c5aa0; font-size: 2em; font-weight: 700;">Your Tennis Type is: ${type}</h2>
-                ${part1}
-                ${part2}
-            `;
-
-            // Append to body temporarily to render
-            tempDiv.style.position = 'absolute';
-            tempDiv.style.left = '-9999px';
-            document.body.appendChild(tempDiv);
-
-            // Use html2canvas to capture the simplified content
-            html2canvas(tempDiv, {
-                width: 600, // Suitable for both mobile and computer
-                height: tempDiv.scrollHeight, // Dynamic height based on content
-                scale: 2 // Increase resolution for clarity
+            html2canvas(resultsDiv, { 
+                scale: 2, // Increase resolution for clarity
+                backgroundColor: null // Use the actual background
             }).then(canvas => {
                 const link = document.createElement('a');
-                link.download = 'tennis_type_results.png';
+                link.download = `tennis_type_results_${document.getElementById('type-result').textContent}.png`;
                 link.href = canvas.toDataURL('image/png');
                 link.click();
-                document.body.removeChild(tempDiv); // Clean up
+
+                // Restore the button and ad
+                downloadButton.style.display = 'block';
+                adDiv.style.display = 'block';
             });
         }
     </script>
 </body>
 </html>
+
