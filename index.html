@@ -176,7 +176,6 @@
             <h2>Introduction</h2>
             <p>Welcome to the Tennis Typing Test, a framework designed to analyze and categorize the countless styles of play in tennis. Much like personality tests, this quiz places your game on four independent axes. Your results will give you a unique 4-letter acronym that captures your strategic approach, court positioning, point tempo, and technical foundation.</p>
             <p>This isn't about finding a "best" style—it's about understanding your own. Whether you're an aggressive baseliner, a crafty constructor, or a flawless all-courter, your type has its own strengths and legendary players to learn from.</p>
-            <div class="ad"> Ad Space: Banner or Video Ad Here <!-- Replace with Google AdSense code --> </div>
             <button onclick="startQuiz()">Start the Quiz</button>
         </div>
     </div>
@@ -238,8 +237,6 @@
             <input type="range" id="q2_5" min="1" max="10" value="5">
             <div class="labels"><span>1 (Disagree)</span><span>10 (Agree)</span></div>
         </div>
-        <!-- Mid-quiz Ad Placeholder -->
-        <div class="ad">Ad Space: Between Pages</div>
         <button onclick="nextPage(2)">Next</button>
     </div>
 
@@ -307,8 +304,6 @@
         <h2>Your Tennis Type is: <span id="type-result"></span></h2>
         <div id="description"></div>
         <button onclick="downloadResults()">Download the Results</button>
-        <!-- Post-result Ad Placeholder -->
-        <div class="ad">Ad Space: After Results</div>
     </div>
 
     <script>
@@ -374,7 +369,6 @@
             // --- NEW LOGIC FOR PLAYER EXAMPLES ---
 
             // Determine "leaning" for balanced (B) types for player examples
-            // If the score is between 4 and 7, it's 'B', but we check if it's closer to one end.
             let leanAxis3 = axis3;
             if (axis3 === 'B') {
                 leanAxis3 = (avg3 > 5.5) ? 'E' : 'C';
@@ -397,7 +391,7 @@
                     playerExamplesHTML += 'Carlos Alcaraz, Bjorn Borg, Iga Swiatek, Maria Sharapova, Steffi Graf.';
                     playersFound = true;
                 } else if (leanAxis3 === 'C' && leanAxis4 === 'P') {
-                    playerExamplesHTML += 'Rafael Nadal, Novak Djokovic, Dominic Thiem, Simona Halep, Jasmine Paolini.';
+                    playerExamplesHTML += 'Rafael Nadal, Novak Djokovic, Dominic Thiem, Simona Halp, Jasmine Paolini.';
                     playersFound = true;
                 } else if (leanAxis3 === 'C' && leanAxis4 === 'T') {
                     playerExamplesHTML += 'Novak Djokovic, Rafael Nadal, Daniil Medvedev, Mats Wilander, Ons Jabeur.';
@@ -520,28 +514,19 @@
         }
 
         function downloadResults() {
-            // This function is complex and relies on the exact structure of the results.
-            // For simplicity, we'll capture the entire results div.
             const resultsDiv = document.getElementById('quiz-results');
-            
-            // Temporarily hide the download button and ad from the capture
             const downloadButton = resultsDiv.querySelector('button');
-            const adDiv = resultsDiv.querySelector('.ad');
-            downloadButton.style.display = 'none';
-            adDiv.style.display = 'none';
+            downloadButton.style.display = 'none'; // Hide button from capture
 
             html2canvas(resultsDiv, { 
-                scale: 2, // Increase resolution for clarity
-                backgroundColor: null // Use the actual background
+                scale: 2,
+                backgroundColor: null
             }).then(canvas => {
                 const link = document.createElement('a');
                 link.download = `tennis_type_results_${document.getElementById('type-result').textContent}.png`;
                 link.href = canvas.toDataURL('image/png');
                 link.click();
-
-                // Restore the button and ad
-                downloadButton.style.display = 'block';
-                adDiv.style.display = 'block';
+                downloadButton.style.display = 'block'; // Show button again
             });
         }
     </script>
